@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine? ❤️</title>
+    <style>
+        body {
+            background-color: #ff4d6d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+        }
+        .container {
+            text-align: center;
+        }
+        .heart-button {
+            font-size: 20px;
+            padding: 20px;
+            background-color: #ff1654;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            position: relative;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .heart-button::before,
+        .heart-button::after {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: #ff1654;
+            border-radius: 50%;
+        }
+        .heart-button::before {
+            top: -40px;
+            left: 0;
+        }
+        .heart-button::after {
+            top: 0;
+            left: -40px;
+        }
+        .heart-button:hover {
+            background-color: #d90429;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine? 💖</h1>
+        <button class="heart-button" onclick="window.location.href='yes.html'">Yes</button>
+        <button class="heart-button" onclick="window.location.href='no.html'">No</button>
+    </div>
+</body>
+</html>
