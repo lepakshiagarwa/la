@@ -5,34 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentine's Invitation ❤️</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
         body {
+            font-family: 'Poppins', sans-serif;
             background-color: #ff4d6d;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
             text-align: center;
-            font-family: 'Poppins', sans-serif;
-            color: white;
         }
+
         .card {
-            background-color: white;
-            color: #ff4d6d;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-            position: relative;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
         }
-        img {
-            width: 100px;
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            color: #ff1654;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .duoduo {
+            font-size: 14px;
+            margin-top: 20px;
             cursor: pointer;
+            color: #ff4d6d;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .duoduo:hover {
+            color: #d90429;
         }
     </style>
 </head>
 <body>
+
     <div class="card">
         <h1>Hey love, I have something for you ❤️</h1>
-        <p>Cl
+        <p>Click below to open it!</p>
+        <div class="duoduo" onclick="openInvitation()">Open this</div>
+    </div>
+
+    <script>
+        function openInvitation() {
+            window.location.href = "invitation.html";
+        }
+    </script>
+
+</body>
+</html>
