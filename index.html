@@ -27,6 +27,7 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
+            transition: transform 0.3s ease-in-out;
         }
         .flap {
             position: absolute;
@@ -51,6 +52,8 @@
             transform: translateY(50px);
             transition: opacity 0.5s, transform 0.5s;
             border-radius: 10px;
+            padding: 10px;
+            text-align: center;
         }
         .duoduo {
             position: absolute;
@@ -61,6 +64,7 @@
             padding: 8px 12px;
             border-radius: 20px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
         }
         .duoduo::after {
             content: '\1F449';
@@ -76,9 +80,10 @@
     </style>
     <script>
         function openEnvelope() {
-            document.querySelector('.envelope').classList.add('open');
+            let envelope = document.querySelector('.envelope');
+            envelope.classList.add('open');
             setTimeout(() => {
-                window.location.href = 'invite.html';
+                window.location.href = 'invitation.html';
             }, 2000);
         }
     </script>
@@ -87,10 +92,10 @@
     <div class="envelope" onclick="openEnvelope()">
         <div class="flap"></div>
         <div class="message">
-            <h2>Hey Love! 💕</h2>
+            <h2>Helloooo motuuuuuuu 💕</h2>
             <p>Click to see something special!</p>
         </div>
-        <div class="duoduo">Open this!</div>
+        <button class="duoduo" onclick="openEnvelope()">Open this!</button>
     </div>
 </body>
 </html>
