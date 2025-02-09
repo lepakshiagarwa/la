@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Think Again! 😆</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-color: #ff4d6d;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        }
+        .yes-button, .no-button {
+            font-size: 20px;
+            padding: 20px;
+            background-color: #ff1654;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .yes-button::before, .no-button::before {
+            content: "";
+            position: absolute;
+            top: -40px;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            background-color: #ff1654;
+            border-radius: 50%;
+        }
+        .yes-button::after, .no-button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -40px;
+            width: 80px;
+            height: 80px;
+            background-color: #ff1654;
+            border-radius: 50%;
+        }
+        .yes-button:hover, .no-button:hover {
+            background-color: #d90429;
+            transform: scale(1.1);
+        }
+    </style>
+    <script>
+        function growYesButton() {
+            let yesButton = document.getElementById('yes-button');
+            let currentSize = parseInt(window.getComputedStyle(yesButton).width);
+            yesButton.style.width = (currentSize + 20) + 'px';
+            yesButton.style.height = (currentSize + 20) + 'px';
+            if (currentSize > 100) {
+                yesButton.style.width = '100vw';
+                yesButton.style.height = '100vh';
+                yesButton.innerText = "You have no choice! 😆";
+                yesButton.style.fontSize = "2rem";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Are you sure? 🥺</h1>
+    <button id="yes-button" class="yes-button" onclick="window.location.href='yes.html'">Yes</button>
+    <button class="no-button" onclick="growYesButton()">No</button>
+</body>
+</html>
